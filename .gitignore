@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+smartresume.db
+.env
+uploads/*.pdf
+uploads/*.docx
+uploads/*.txt
+.DS_Store
