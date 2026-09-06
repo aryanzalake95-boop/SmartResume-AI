@@ -44,7 +44,7 @@ def init_db():
     """)
     admin = con.execute("SELECT id FROM users WHERE username=?", ("admin",)).fetchone()
     if not admin:
-        con.execute("INSERT INTO users(name,username,password,role) VALUES(?,?,?,?)", ("Administrator", "admin", generate_password_hash("admin123"), "admin"))
+        con.execute("INSERT INTO users(name,username,password,role) VALUES(?,?,?,?)", ("Administrator", "aryan", generate_password_hash("aryan@123"), "admin"))
     con.commit(); con.close()
 
 def current_user():
