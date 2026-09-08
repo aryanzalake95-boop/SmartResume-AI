@@ -120,6 +120,15 @@ def current_user():
 def inject_user():
     return {"current_user": current_user()}
 
+@app.get("/healthz")
+def healthz():
+    try:
+        with engine.connect() as con:
+            con.execute(text("SELECT 1"))
+        return {"status": "ok"}, 200
+    except Exception:
+        return {"status": "error"}, 503
+
 @app.route("/")
 def home():
     return render_template("index.html")
